@@ -47,11 +47,15 @@ exports.submit = function(req, res) {
     ticket.hackerLocation = req.body.hackerLocation;
     ticket.problemTitle = req.body.problemTitle;
     ticket.problemDescription = req.body.problemDescription;
+    ticket.status = "Open";
+    tags = req.body.problemTags;
+
+    ticket.problemTags = tags.split(',');
 
     ticket.save(function(err) {
         if (err) {
             res.send(err);
         }
     });
-    res.send(201);
+    res.sendStatus(201);
 }

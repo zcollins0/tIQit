@@ -57,6 +57,7 @@ a {
 .ticket-section {
   display: inline-block;
   padding: 5px;
+  padding-bottom: 0px;
   width: 100%;
 }
 

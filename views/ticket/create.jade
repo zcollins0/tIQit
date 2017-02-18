@@ -3,10 +3,13 @@ extends ../layout
 block content
 	form(id="ticket-form" action="submit" method="post" enctype="multipart/form-data")
 		div(class="ticket-section" id="heading") 
-			h1 Important stuff: 
+			h1 Title: 
 			table
 				tr
 					input(type="text" class="ticket-field" id="problem-title" placeholder="Problem title")
+		div(class="ticket-section" id="tags")
+			h1 Tags:
+			table
 				tr
 					input(type="text" class="ticket-field" id="problem-tags" placeholder="Tags")
 		div(class="ticket-section" id="details") 
