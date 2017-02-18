@@ -9,10 +9,13 @@ exports.view_all = function(req, res) {
         limit: size
     },
     function(err, tickets) {
-        res.render('ticket/view-all', {
+       res.render('ticket/view-all', {
             title: "All Tickets",
             tickets: tickets
         });
+        
+        
+        //res.json({tickets:tickets});
     });
 }
 

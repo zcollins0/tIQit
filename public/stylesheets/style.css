@@ -92,23 +92,34 @@ a {
   margin: 20px auto;
   background-color:white;
   padding: 20px;
-  /*white-space: nowrap;*/
   font-family: "Lato",sans-serif;
+  font-size:10pt;
   width: 900px;
 }
 
 #tickets-table td {
-  border-left: 2px solid black;
-  padding:10px;
+  border-left: 1px dashed #67cbec;
+  border-bottom: 1px dashed #67cbec;
+  padding-left:18px;
+  padding-bottom:18px;
   margin: 5px;
-}
-
-#tickets-table tr:hover {
-  transition-duration: 0.4s;
-  background-color: #C9EFFC;
-	border-radius:.60rem;
 }
 
 .nav-button,#submit-ticket {
   color:black;
+}
+
+svg#open-view {
+    padding:0px auto;
+    fill: #fa6f14;
+}
+
+#details-link{
+  width:100%;
+  padding-right:20px;
+}
+
+#details-link{
+  width:100%;
+  padding-right:20px;
 }

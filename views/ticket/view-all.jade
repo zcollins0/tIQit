@@ -1,18 +1,27 @@
 extends ../layout 
 
-mixin ticket(ticketObj)
+mixin ticketfunc(ticketObj)
     tr
-        td= ticketObj.title
-        td= tecketObj.tags
-
-mixin tags(tagsList)
-    for tag in tagsList
-        li=tag
+        td(width="15%")= ticketObj.problemTitle
+        td(width="15%")= ticketObj.projectName
+        td
+            ul
+            for tag in ticketObj.problemTags
+                li= tag
+        td(width="15%")= ticketObj.status
+        td(width="10%")
+            a(id="details-link", href='view?id='+ticketObj.id)
+                svg(id="open-view", x="0", y="0", width="100%", height="30px")
+                    rect(width="100%", height="100%", x="0", y="0")
+                        text(x="50%", y="50%") Details
 
 block content
     h1 Available tickets
     table(id="tickets-table")
         th Title
-        th Tag
-        for ticket in ticketsList
-            ticket(ticket)
+        th Project Name
+        th Tags
+        th Status
+        th
+        for ticket in tickets
+            +ticketfunc(ticket)
