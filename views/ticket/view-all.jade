@@ -1,0 +1,18 @@
+extends ../layout 
+
+mixin ticket(ticketObj)
+    tr
+        td= ticketObj.title
+        td= tecketObj.tags
+
+mixin tags(tagsList)
+    for tag in tagsList
+        li=tag
+
+block content
+    h1 Available tickets
+    table(id="tickets-table")
+        th Title
+        th Tag
+        for ticket in ticketsList
+            ticket(ticket)

@@ -1,14 +1,21 @@
 var Ticket = require('../models/ticket');
 
 exports.view_all = function(req, res) {
-    tickets.find(function(err, tickets) {
+    var page = parseInt(req.query.page);
+    var size = 10;
+    var skip = page > 0 ? ((page - 1) * size) : 0;
+    Ticket.find(null,null, {
+        skip: skip,
+        limit: size
+    },
+    function(err, tickets) {
         res.render('ticket/view-all', {
             title: "All Tickets",
             tickets: tickets
         });
     });
 }
-/*
+
 exports.view = function(req, res) {
     Ticket.findOne({"ticketSchema._id": req.params.id}, function(err, ticket) {
         if (ticket) {
@@ -18,12 +25,13 @@ exports.view = function(req, res) {
         }
     });
 }
-*/
 
+/*
 //this is just here temporarily to debug view's styling. Will be replaced with the above commented code
 exports.view = function(req,res) {
     res.render('ticket/view');
 }
+*/
 
 exports.create = function(req, res) {
     res.render('ticket/create');
