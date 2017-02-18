@@ -1,14 +1,23 @@
-extends ../layout
+extends ../layout 
 
 block content
-	div(id="create-title") New Ticket: 
-	form(id="hacker-form" action="hackers" method="post" enctype="multipart/form-data")
-		div(class="form-section" id="heading")
-			textarea(class="form-field" id="problem-title")
-			textarea(class="form-field" id="problem-tags")
-		div(class="form-section" id="details")
-			textarea(class="form-field" id="hacker-name")
-			textarea(class="form-field" id="project-name")
-			textarea(class="form-field" id="issue-description")
-			textarea(class="form-field" id="phone-number")
-			textarea(class="form-field" id="location-description")
+	form(id="hacker-form" action="submit" method="post" enctype="multipart/form-data")
+		div(class="form-section" id="heading") Important stuff: 
+			table
+				tr
+					input(type="text" class="form-field" id="problem-title" placeholder="Problem title")
+				tr
+					input(type="text" class="form-field" id="problem-tags" placeholder="Tags")
+		div(class="form-section" id="details") Details: 
+			table
+				tr
+					input(type="text" class="form-field" id="hacker-name" placeholder="Your name")
+				tr
+					input(type="text" class="form-field" id="project-name" placeholder="Name of your project")
+				tr
+					textarea(class="form-field" id="issue-description" placeholder="Description of your problem")
+				tr
+					textarea(class="form-field" id="location-description" placeholder="Description of your location so a mentor can find you")
+				tr
+					input(type="number" class="form-field" id="phone-number" placeholder="Your phone number in case your mentor can't find you")
+		input(type="submit" value="Create new ticket!")
