@@ -1,14 +1,14 @@
-extends layout
+extends ../layout
 
 block content
-	div(id="create-title") New Ticket:
+	div(id="create-title") New Ticket: 
 	form(id="hacker-form" action="hackers" method="post" enctype="multipart/form-data")
-		div(class="form-section" id="heading") sfdcjlnsdcjlsdn
-			text(class="form-field" id="problem-title")
-			text(class="form-field" id="problem-tags")
+		div(class="form-section" id="heading")
+			textarea(class="form-field" id="problem-title")
+			textarea(class="form-field" id="problem-tags")
 		div(class="form-section" id="details")
-			text(class="form-field" id="hacker-name")
-			text(class="form-field" id="project-name")
-			text(class="form-field" id="issue-description")
-			text(class="form-field" id="phone-number")
-			text(class="form-field" id="location-description")
+			textarea(class="form-field" id="hacker-name")
+			textarea(class="form-field" id="project-name")
+			textarea(class="form-field" id="issue-description")
+			textarea(class="form-field" id="phone-number")
+			textarea(class="form-field" id="location-description")
