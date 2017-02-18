@@ -46,11 +46,13 @@ a {
     display:block;
 }
 
-.ticket-field{
+.ticket-field {
   display:block;
   width:60%;
-  margin: 10px auto;
-  padding: 20px;
+  margin: 0px auto;
+  margin-top: 0px;
+  padding: 5px;
+  padding-top: 0px;
 }
 
 .ticket-section {
@@ -61,10 +63,9 @@ a {
 }
 
 .ticket-section > h1 {
-  font-size:15pt;
+  font-size:20pt;
   text-align: left;
   padding-left: 10%;
-
 }
 
 #submit-ticket {
