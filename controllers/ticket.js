@@ -30,6 +30,18 @@ exports.create = function(req, res) {
 }
 
 exports.submit = function(req, res) {
+    // Check for missing fields
+    req.checkBody('hackerName', 'No hacker name provided').notEmpty();
+    req.checkBody('hackerLocation', 'No location provided').notEmpty();
+    req.checkBody('problemTitle', 'No title submitted').notEmpty();
+    req.checkBody('problemDescription', 'No problem description provided').notEmpty();
+
+    req.getValidationResult().then(function(result) {
+        if (!result.isEmpty()) {
+            res.status(400).render('ticket/create', {errors: result.array()});
+        }
+    })
+
     var ticket = Ticket();
     ticket.hackerName = req.body.hackerName;
     ticket.hackerPhoneNumber = req.body.hackerPhoneNumber;

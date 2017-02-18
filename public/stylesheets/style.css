@@ -73,4 +73,13 @@ a {
   margin:2% auto;
 }
 
+.warning-message {
+  font-size:20pt;
+  text-align:left;
+  border-left-width: 3px;
+  border-color: white;
+  padding-left: 100px;
+  background:red;
+}
+
 
