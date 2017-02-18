@@ -7,21 +7,28 @@ block content
 			table
 				tr
 					div(class="ticket-field" id="problem-title")
+						td= ticket.problemTitle
 				tr
 					div(class="ticket-field" id="problem-tags")
+						td= ticket.problemTags
 		div(class="ticket-section" id="details") 
 			h1 Details: 
 			table
 				tr
 					div(class="ticket-field" id="hacker-name")
+						td= ticket.hackerName
 				tr
 					div(class="ticket-field" id="project-name")
+						td= ticket.projectName
 				tr
 					div(class="ticket-field" id="issue-description")
+						td= ticket.problemDescription
 				tr
 					div(class="ticket-field" id="location-description")
+						td= ticket.hackerLocation
 				tr
 					div(class="ticket-field" id="phone-number")
+						td= ticket.hackerPhoneNumber
 				tr
 					select(class="ticket-field" id="status")
 						option(value="Open") Open
