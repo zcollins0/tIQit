@@ -1,5 +1,7 @@
 html,body {
   font-family:"Jockey One","Lato", sans-serif;
+  font-size: 20pt;
+  color: white;
 }
 
 .nav-button:not(hover){
