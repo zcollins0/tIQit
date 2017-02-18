@@ -27,7 +27,6 @@ html,body {
 
 }
 
-
 .nav-button:hover{
   width: 65%;
   border-color:#fa6f14;
@@ -89,7 +88,7 @@ a {
 
 #tickets-table tr:hover {
   transition-duration: 0.4s;
-  background-color: #67cbec;
+  background-color: #C9EFFC;
 	border-radius:.60rem;
 }
 
