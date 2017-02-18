@@ -20,7 +20,7 @@ exports.view = function(req, res) {
 }
 
 exports.create = function(req, res) {
-
+    res.render('/ticket/create');
 }
 
 exports.submit = function(req, res) {
