@@ -2,31 +2,31 @@ extends ../layout
 
 block content
 	if(locals.errors)
-		div(class="warning-message" id="warning")
+		div(class="warning-message", id="warning")
 			each error in errors
 				p= error.msg
-	form(id="ticket-form" action="submit" method="post" enctype="multipart/form-data")
-		div(class="ticket-section" id="heading") 
+	form(id="ticket-form", action="submit", method="post")
+		div(class="ticket-section", id="heading") 
 			h1 Title: 
 			table
 				tr
-					input(type="text" class="ticket-field" id="problem-title" placeholder="Problem title")
-		div(class="ticket-section" id="tags")
+					input(type="text", class="ticket-field", name="problemTitle", placeholder="Problem title")
+		div(class="ticket-section", id="tags")
 			h1 Tags:
 			table
 				tr
-					input(type="text" class="ticket-field" id="problem-tags" placeholder="Tags")
-		div(class="ticket-section" id="details") 
+					input(type="text", class="ticket-field",  name="problemTags", placeholder="Tags")
+		div(class="ticket-section", id="details") 
 			h1 Details: 
 			table
 				tr
-					input(type="text" class="ticket-field" id="hacker-name" placeholder="Your name")
+					input(type="text", class="ticket-field",  name="hackerName", placeholder="Your name")
 				tr
-					input(type="text" class="ticket-field" id="project-name" placeholder="Name of your project")
+					input(type="text", class="ticket-field",  name="projectName", placeholder="Name of your project")
 				tr
-					textarea(class="ticket-field" id="issue-description" placeholder="Description of your problem")
+					textarea(class="ticket-field", name="problemDescription", placeholder="Description of your problem")
 				tr
-					textarea(class="ticket-field" id="location-description" placeholder="Description of your location so a mentor can find you")
+					textarea(class="ticket-field", name="hackerLocation", placeholder="Description of your location so a mentor can find you")
 				tr
-					input(type="number" class="ticket-field" id="phone-number" placeholder="Your phone number in case your mentor can't find you")
-		input(id="submit-ticket" class="nav-button" type="submit" value="Create new ticket!")
+					input(type="number", class="ticket-field", name="hackerPhoneNumber", placeholder="Your phone number in case your mentor can't find you")
+		input(id="submit-ticket", class="nav-button", type="submit", value="Create new ticket!")

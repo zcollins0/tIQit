@@ -38,6 +38,7 @@ exports.create = function(req, res) {
 
 exports.submit = function(req, res) {
     // Check for missing fields
+    console.log(req.body);
     req.checkBody('hackerName', 'No hacker name provided').notEmpty();
     req.checkBody('hackerLocation', 'No location provided').notEmpty();
     req.checkBody('problemTitle', 'No title submitted').notEmpty();
@@ -56,6 +57,7 @@ exports.submit = function(req, res) {
     ticket.problemTitle = req.body.problemTitle;
     ticket.problemDescription = req.body.problemDescription;
     ticket.status = "Open";
+    ticket.projectName = req.body.projectName;
     tags = req.body.problemTags;
 
     ticket.problemTags = tags.split(',');
