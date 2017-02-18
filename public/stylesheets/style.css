@@ -1,8 +1,26 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+html,body {
+  font-family:"Jockey One","Lato", sans-serif;
 }
 
-a {
-  color: #00B7FF;
+.nav-button:not(hover){
+  background-color:#67cbec;
+  width: 50%;
+  height: 40%;
+  padding: 5%;
+  margin: 5% auto;
+  text-align: center;
+  border-style: solid;
+  border-color: #fa6f14;
+  transition-duration: 0.25s;
+  border-width: 0px;
+
+}
+
+
+.nav-button:hover{
+  width: 65%;
+  border-color:#fa6f14;
+  border-left-width: 20px;
+  border-right-width: 20px;
+  transition: 0.25s;
 }
