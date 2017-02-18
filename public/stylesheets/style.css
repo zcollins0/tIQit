@@ -1,7 +1,7 @@
 html,body {
   font-family:"Jockey One","Lato", sans-serif;
   font-size: 20pt;
-  color: white;
+  color: black;
   background-color: #C9EFFC;
   max-width: 900px;
   margin: auto;
@@ -15,6 +15,7 @@ html,body {
 	display:block;
   text-align: center;
   border-style: solid;
+  color:white;
 }
 
 .nav-button:not(hover){
@@ -37,7 +38,6 @@ html,body {
 
 a {
   font-size: 15pt;
-  color: black;
   display: block;
   text-decoration: none;
 }
@@ -55,7 +55,6 @@ a {
 }
 
 .ticket-section {
-  color: black;
   display: inline-block;
   padding: 5px;
   width: 100%;
@@ -72,4 +71,24 @@ a {
   margin:2% auto;
 }
 
+#tickets-table {
+  margin: 20px auto;
+  background-color:white;
+  padding: 20px;
+  /*white-space: nowrap;*/
+  font-family: "Lato",sans-serif;
+  width: 900px;
+}
+
+#tickets-table td {
+  border-left: 2px solid black;
+  padding:10px;
+  margin: 5px;
+}
+
+#tickets-table tr:hover {
+  transition-duration: 0.4s;
+  background-color: #67cbec;
+	border-radius:.60rem;
+}
 

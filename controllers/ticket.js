@@ -8,7 +8,16 @@ exports.view_all = function(req, res) {
         });
     });
 }
+
+
 /*
+exports.view_all = function(req,res) {
+    res.render('ticket/view-all');
+}
+*/
+
+
+
 exports.view = function(req, res) {
     Ticket.findOne({"ticketSchema._id": req.params.id}, function(err, ticket) {
         if (ticket) {
@@ -18,12 +27,14 @@ exports.view = function(req, res) {
         }
     });
 }
-*/
 
+
+/*
 //this is just here temporarily to debug view's styling. Will be replaced with the above commented code
 exports.view = function(req,res) {
     res.render('ticket/view');
 }
+*/
 
 exports.create = function(req, res) {
     res.render('ticket/create');

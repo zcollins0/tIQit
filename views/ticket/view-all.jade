@@ -1,0 +1,21 @@
+extends ../layout 
+
+mixin ticket(ticketObj)
+    tr
+        td= ticketObj.title
+        td= tecketObj.tags
+
+mixin tags(tagsList)
+    for tag in tagsList
+        li=tag
+
+block content
+    h1 Available tickets
+    table(id="tickets-table")
+        th Title
+        th Tag
+        tr
+            td Example title
+            td example, tags, go, here, so, that, mentors, can, choose, appropriate, tickets
+//        for ticket in ticketsList
+            ticket(ticket)
