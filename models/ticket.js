@@ -7,6 +7,7 @@ var ticketSchema = new mongoose.Schema({
     problemTitle: String,
     problemDescription: String,
     problemTags: [String],
+    projectName: String,
     status: String
 });
 
