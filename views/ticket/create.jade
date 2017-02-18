@@ -1,9 +1,10 @@
 extends ../layout 
 
 block content
-	div(class="warning-message" id="warning")
-		each error in errors
-			li= error.msg
+	if (locals.errors)
+		div(class="warning-message" id="warning")
+			each error in errors
+				li= error.msg
 	form(id="ticket-form" action="submit" method="post" enctype="multipart/form-data")
 		div(class="ticket-section" id="heading") 
 			h1 Title: 

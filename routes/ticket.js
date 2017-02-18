@@ -4,7 +4,9 @@ var router = express.Router();
 var controller = require('../controllers/ticket');
 
 /* GET users listing. */
-router.get('/', controller.create);
+router.get('/', function(req, res) {
+    res.redirect('ticket/create')
+});
 router.get('/create', controller.create);
 router.get('/view', controller.view);
 router.get('/view-all', controller.view_all);
