@@ -1,4 +1,4 @@
-var tickets = require('../models/ticket');
+var Ticket = require('../models/ticket');
 
 exports.view_all = function(req, res) {
     tickets.find(function(err, tickets) {
@@ -10,7 +10,7 @@ exports.view_all = function(req, res) {
 }
 
 exports.view = function(req, res) {
-    tickets.findOne({"ticketSchema._id": req.params.id}, function(err, ticket) {
+    Ticket.findOne({"ticketSchema._id": req.params.id}, function(err, ticket) {
         if (ticket) {
             res.render('ticket/view', {
                 title: ticket.problemTitle
@@ -29,9 +29,9 @@ exports.submit = function(req, res) {
     ticket.hackerPhoneNumber = req.body.hackerPhoneNumber;
     ticket.hackerLocation = req.body.hackerLocation;
     ticket.problemTitle = req.body.problemTitle;
-    ticket.problemDesrcription = req.body.problemDescription;
+    ticket.problemDescription = req.body.problemDescription;
 
-    company.save(function(err) {
+    ticket.save(function(err) {
         if (err) {
             res.send(err);
         }
