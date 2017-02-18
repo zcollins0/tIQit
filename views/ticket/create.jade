@@ -1,12 +1,24 @@
 extends ../layout 
 
 block content
+<<<<<<< Updated upstream
 	form(id="ticket-form" action="submit" method="post" enctype="multipart/form-data")
 		div(class="ticket-section" id="heading") 
 			h1 Important stuff: 
 			table
 				tr
 					input(type="text" class="ticket-field" id="problem-title" placeholder="Problem title")
+=======
+	form(id="hacker-form" action="submit" method="post" enctype="multipart/form-data")
+		div(class="form-section" id="heading") 
+			h1 Title: 
+			table
+				tr
+					input(type="text" class="form-field" id="problem-title" placeholder="Problem title")
+		div(class="form-section" id="tags")
+			h1 Tags:
+			table
+>>>>>>> Stashed changes
 				tr
 					input(type="text" class="ticket-field" id="problem-tags" placeholder="Tags")
 		div(class="ticket-section" id="details") 
