@@ -6,6 +6,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var expressValidator = require('express-validator')
+var mongoose = require('mongoose')
 
 var routes = require('./routes/index');
 
@@ -23,8 +24,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', index);
-app.use('/users', users);
+// All routes go to routes/index.js
+app.use('/', routes);
+
+mongoose.connect(process.env.MONGO_URL);
+mongoose.connection.on('error', function() {
+  console.error('✗ MongoDB Connection Error. Please make sure MongoDB is running.');
+})
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
