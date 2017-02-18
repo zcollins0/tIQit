@@ -1,4 +1,24 @@
-extends layout
+extends ../layout 
 
 block content
-	
+	div(id="view-ticket")
+		div(class="ticket-section" id="heading") 
+			h1 Important stuff: 
+			table
+				tr
+					div(class="ticket-field" id="problem-title")
+				tr
+					div(class="ticket-field" id="problem-tags")
+		div(class="ticket-section" id="details") 
+			h1 Details: 
+			table
+				tr
+					div(class="ticket-field" id="hacker-name")
+				tr
+					div(class="ticket-field" id="project-name")
+				tr
+					div(class="ticket-field" id="issue-description")
+				tr
+					div(class="ticket-field" id="location-description")
+				tr
+					div(class="ticket-field" id="phone-number")
