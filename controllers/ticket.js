@@ -5,9 +5,9 @@ exports.view_all = function(req, res) {
 }
 
 exports.view = function(req, res) {
-    tickets.findOne({"_id": req.params.id}, function(err, ticket) {
+    tickets.findOne({"ticketSchema._id": req.params.id}, function(err, ticket) {
         if (ticket) {
-
+            
         }
     });
 }
