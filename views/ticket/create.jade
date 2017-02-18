@@ -2,13 +2,15 @@ extends ../layout
 
 block content
 	form(id="hacker-form" action="submit" method="post" enctype="multipart/form-data")
-		div(class="form-section" id="heading") Important stuff: 
+		div(class="form-section" id="heading") 
+			h1 Important stuff: 
 			table
 				tr
 					input(type="text" class="form-field" id="problem-title" placeholder="Problem title")
 				tr
 					input(type="text" class="form-field" id="problem-tags" placeholder="Tags")
-		div(class="form-section" id="details") Details: 
+		div(class="form-section" id="details") 
+			h1 Details: 
 			table
 				tr
 					input(type="text" class="form-field" id="hacker-name" placeholder="Your name")
@@ -20,4 +22,4 @@ block content
 					textarea(class="form-field" id="location-description" placeholder="Description of your location so a mentor can find you")
 				tr
 					input(type="number" class="form-field" id="phone-number" placeholder="Your phone number in case your mentor can't find you")
-		input(type="submit" value="Create new ticket!")
+		input(id="submit-ticket" class="nav-button" type="submit" value="Create new ticket!")
