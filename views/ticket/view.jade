@@ -1,40 +1,34 @@
 extends ../layout 
 
 block content
-	div(id="view-ticket")
+	form(id="view-ticket")
 		div(class="ticket-section" id="heading") 
 			h1 Title: 
 			table
-				tr
-					div(class="ticket-field" id="problem-title")
-						td= ticket.problemTitle
+				tr(class="ticket-field" id="problem-title")
+						td= "Title: " + ticket.problemTitle
 		div(class="ticket-section" id="heading") 
 			h1 Tags: 
 			table
-				tr
-					div(class="ticket-field" id="problem-tags")
-						td= ticket.problemTags
+				tr(class="ticket-field" id="problem-tags")
+						td= "Tags: " + ticket.problemTags
 		div(class="ticket-section" id="details") 
 			h1 Details: 
 			table
-				tr
-					div(class="ticket-field" id="hacker-name")
-						td= ticket.hackerName
-				tr
-					div(class="ticket-field" id="project-name")
-						td= ticket.projectName
-				tr
-					div(class="ticket-field" id="issue-description")
-						td= ticket.problemDescription
-				tr
-					div(class="ticket-field" id="location-description")
-						td= ticket.hackerLocation
-				tr
-					div(class="ticket-field" id="phone-number")
-						td= ticket.hackerPhoneNumber
-				tr
-					td
-						select(class="ticket-field" id="status")
+				tr(class="ticket-field" id="hacker-name")
+						td= "Hacker name: " + ticket.hackerName
+				tr(class="ticket-field" id="project-name")
+						td= "Project name: " + ticket.projectName
+				tr(class="ticket-field" id="issue-description")
+						td= "Description: " + ticket.problemDescription
+				tr(class="ticket-field" id="location-description")
+						td= "Location:" + ticket.hackerLocation
+				tr(class="ticket-field" id="phone-number")
+						td= "Phone number: " + ticket.hackerPhoneNumber
+				tr(class="ticket-field" id="status-field")
+					td Status:
+						select(id="status-dropdown")
 							option(value="Open") Open
 							option(value="Claimed by mentor") Claimed by mentor
 							option(value="Closed") Closed
+						input(id="submit-change", class="nav-button", type="submit", value="Submit change")

@@ -125,3 +125,33 @@ svg#open-view {
   width:100%;
   padding-right:20px;
 }
+
+.ticket-field {
+  min-width: 900px;
+  background-color: white;
+  border-top: 1px solid black;
+}
+
+
+
+#status-dropdown{
+  margin-left: 50% auto;
+  display: block;
+  text-align: center;
+}
+
+#view-ticket{
+    padding-bottom: 10%;
+}
+
+#submit-change{
+  padding: 100px auto;
+  min-width:400px;
+  margin-left: 1000px auto;
+
+}
+
+#status-field td{
+  width:100%;
+  text-align: left;
+}
