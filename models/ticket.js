@@ -6,7 +6,8 @@ var ticketSchema = new mongoose.Schema({
     hackerLocation: String,
     problemTitle: String,
     problemDescription: String,
-    problemTags: [String]
+    problemTags: [String],
+    status: String
 });
 
 module.exports = mongoose.model("Ticket", ticketSchema);
