@@ -74,10 +74,18 @@ a {
 .warning-message {
   font-size:20pt;
   text-align:left;
-  border-left-width: 3px;
-  border-color: white;
   padding-left: 100px;
+  padding-top:2px;
+  padding-bottom: 5px;
   background:red;
+  margin-bottom:30px;
+}
+
+.warning-message p {
+  border-left-width: 3px;
+  border-color: black;
+  border-left-style: solid;
+  padding-left: 10px;
 }
 
 #tickets-table {
@@ -101,3 +109,6 @@ a {
 	border-radius:.60rem;
 }
 
+.nav-button,#submit-ticket {
+  color:black;
+}
