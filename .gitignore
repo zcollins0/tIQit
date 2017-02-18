@@ -56,3 +56,6 @@ typings/
 
 # dotenv environment variables file
 .env
+
+# swp file for vim
+*.swp
