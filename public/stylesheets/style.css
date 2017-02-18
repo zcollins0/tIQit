@@ -99,11 +99,18 @@ a {
 }
 
 #tickets-table td {
-  border-left: 1px dashed #67cbec;
-  border-bottom: 1px dashed #67cbec;
-  padding-left:18px;
-  padding-bottom:18px;
+  border-left: 1px solid #67cbec;
+  border-bottom: 1px solid #67cbec;
+  border-top: 1px solid #67cbec;
+  border-right: 1px solid #67cbec;
+  padding-left:18px auto;
+  padding-bottom:18px auto;
   margin: 5px;
+  text-align: center;
+}
+
+#tickets-table td ul {
+    text-align: left;
 }
 
 .nav-button,#submit-ticket {
@@ -111,14 +118,19 @@ a {
 }
 
 
-svg#open-view {
+#open-view {
+    width: 90%;
     padding:0px auto;
+    padding-top: 4px;
+    padding-left:4px auto;
     fill: #fa6f14;
 }
 
-#details-link{
-  width:100%;
-  padding-right:20px;
+#open-view text {
+    font-size: 10pt;
+    alignment-baseline: central;
+    text-anchor: middle;
+    fill: white;
 }
 
 #details-link{
@@ -154,4 +166,7 @@ svg#open-view {
 #status-field td{
   width:100%;
   text-align: left;
+}
+#details-link:visited rect{
+  fill: #67cbec;
 }
