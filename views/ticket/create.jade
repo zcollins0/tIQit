@@ -7,10 +7,10 @@ block content
 				p= error.msg
 	form(id="ticket-form", action="submit", method="post")
 		div(class="ticket-section", id="heading") 
-			h1 Title*: 
+			h1 Title: 
 			table
 				tr
-					input(type="text", class="ticket-field", name="problemTitle", placeholder="Problem title")
+					input(type="text", class="ticket-field", name="problemTitle", placeholder="Problem title (required)")
 		div(class="ticket-section", id="tags")
 			h1 Tags:
 			table
