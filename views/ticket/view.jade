@@ -5,27 +5,27 @@ block content
 		div(class="ticket-section" id="heading") 
 			h1 Title: 
 			table
-				tr(class="ticket-field" id="problem-title")
+				tr(class="ticket-field-view" id="problem-title")
 						td= "Title: " + ticket.problemTitle
 		div(class="ticket-section" id="heading") 
 			h1 Tags: 
 			table
-				tr(class="ticket-field" id="problem-tags")
+				tr(class="ticket-field-view" id="problem-tags")
 						td= "Tags: " + ticket.problemTags
 		div(class="ticket-section" id="details") 
 			h1 Details: 
 			table
-				tr(class="ticket-field" id="hacker-name")
+				tr(class="ticket-field-view" id="hacker-name")
 						td= "Hacker name: " + ticket.hackerName
-				tr(class="ticket-field" id="project-name")
+				tr(class="ticket-field-view" id="project-name")
 						td= "Project name: " + ticket.projectName
-				tr(class="ticket-field" id="issue-description")
+				tr(class="ticket-field-view" id="issue-description")
 						td= "Description: " + ticket.problemDescription
-				tr(class="ticket-field" id="location-description")
+				tr(class="ticket-field-view" id="location-description")
 						td= "Location:" + ticket.hackerLocation
-				tr(class="ticket-field" id="phone-number")
+				tr(class="ticket-field-view" id="phone-number")
 						td= "Phone number: " + ticket.hackerPhoneNumber
-				tr(class="ticket-field" id="status-field")
+				tr(class="ticket-field-view" id="status-field")
 					td Status:
 						select(id="status-dropdown")
 							option(value="Open") Open
