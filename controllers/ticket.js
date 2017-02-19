@@ -6,13 +6,28 @@ exports.view_all = function(req, res) {
     var skip = page > 0 ? ((page - 1) * size) : 0;
     Ticket.find(null,null, {
         skip: skip,
-        limit: size
+        limit: size,
+        sort:{
+            status: -1,
+            date_added: -1
+        }
     },
     function(err, tickets) {
+        var nextPage, prevPage;
+        if (tickets < 10) {
+            nextPage=0;
+        } else {
+            nextPage = page +1;
+        }
+        if (page > 1) {
+            prevPage = page -1;
+        }
        res.render('ticket/view-all', {
             title: "All Tickets",
             tickets: tickets,
-            pageNum: req.query.page
+            title: "View-all",
+            nextPage: nextPage,
+            prevPage: prevPage
         });
         
         
@@ -23,7 +38,7 @@ exports.view_all = function(req, res) {
 exports.view = function(req, res) {
     Ticket.findById(req.query.id, function(err, ticket) {
         if (ticket) {
-            res.render('ticket/view', {ticket});
+            res.render('ticket/view', {ticket, title: ticket.problemTitle});
         }
     });
 }
@@ -36,7 +51,7 @@ exports.view = function(req,res) {
 */
 
 exports.create = function(req, res) {
-    res.render('ticket/create');
+    res.render('ticket/create', {title: "Create new ticket"});
 }
 
 exports.submit = function(req, res) {
@@ -49,7 +64,7 @@ exports.submit = function(req, res) {
     req.getValidationResult().then(function(result) {
         if (!result.isEmpty()) {
             // Render a warning to the user for more data.
-            res.status(400).render('ticket/create', { errors: result.array() });
+            res.status(400).render('ticket/create', { errors: result.array(), title: "You goofed" });
             return;
         } else {
             // The entry is good, continue with saving the item
