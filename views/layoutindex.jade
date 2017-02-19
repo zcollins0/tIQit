@@ -1,0 +1,18 @@
+doctype html
+html
+  head
+    title= title
+    link(href='/stylesheets/styleindex.css', rel='stylesheet')
+    link(href="https://fonts.googleapis.com/css?family=Jockey+One", rel="stylesheet")
+  body
+    div(id="nav-bar")
+      table(width="100%")
+        tr
+          td(width="30%")
+            a(href="/") Home
+          td(width="30%")
+            a(href="/ticket/create") New ticket
+          td(width="30%")
+            a(href="/ticket/view-all") View All Tickets
+    div(class="container")
+      block content
