@@ -9,7 +9,7 @@ mixin tagSection(tagsPresent)
 					td= "Tags: " + ticket.problemTags
 
 block content
-	form(id="view-ticket", action="/ticket/update?id=" + ticket.id, method="post")
+	form(id="view-ticket", action="update?id=" + ticket.id,method="post")
 		div(class="ticket-section", id="heading") 
 			h1 Title: 
 			table(width="100%")
@@ -31,7 +31,7 @@ block content
 						td= "Phone number: " + ticket.hackerPhoneNumber
 				tr(class="ticket-field-view", id="status-field")
 					td Status:
-						select(id="status-dropdown")
+						select(id="status-dropdown", name="status")
 							option(value="Open") Open
 							option(value="Claimed by mentor") Claimed by mentor
 							option(value="Closed") Closed

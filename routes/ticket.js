@@ -10,7 +10,9 @@ router.get('/', function(req, res) {
 router.get('/create', controller.create);
 router.get('/view', controller.view);
 router.get('/view-all', controller.view_all);
-router.get('/update', controller.update);
+
+//Post for update
+router.post('/update', controller.update);
 
 /* POST users listing. */
 router.post('/submit', controller.submit);
