@@ -1,7 +1,7 @@
 var Ticket = require('../models/ticket');
 
 exports.view_all = function(req, res) {
-    var page = parseInt(req.query.page);
+    var page = parseInt(req.query.page) ? parseInt(req.query.page) : 1;
     var size = 10;
     var skip = page > 0 ? ((page - 1) * size) : 0;
     Ticket.find(null,null, {
