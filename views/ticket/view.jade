@@ -9,7 +9,7 @@ mixin tagSection(tagsPresent)
 					td= "Tags: " + ticket.problemTags
 
 block content
-	form(id="view-ticket", action="ticket/update", method="post")
+	form(id="view-ticket", action="/ticket/update?id=" + ticket.id, method="post")
 		div(class="ticket-section", id="heading") 
 			h1 Title: 
 			table(width="100%")
