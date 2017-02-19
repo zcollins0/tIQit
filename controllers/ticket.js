@@ -22,7 +22,6 @@ exports.view_all = function(req, res) {
 exports.view = function(req, res) {
     Ticket.findOne({"ticketSchema._id": req.params.id}, function(err, ticket) {
         if (ticket) {
-            console.log(ticket)
             res.render('ticket/view', {ticket});
         }
     });
@@ -74,4 +73,12 @@ exports.submit = function(req, res) {
             });
         }
     })
+}
+
+exports.update = function(req, res) {
+    Ticket.findOne({"ticketSchema._id": req.params.id}, function(err, ticket) {
+        if (ticket) {
+            //update
+        }
+    });
 }
