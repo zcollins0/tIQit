@@ -75,9 +75,15 @@ exports.submit = function(req, res) {
 }
 
 exports.update = function(req, res) {
-    Ticket.findOne({"ticketSchema._id": req.params.id}, function(err, ticket) {
+    Ticket.findById(req.query.id, function(err, ticket) {
         if (ticket) {
-            //update
+            ticket.status = req.body.status;
+            ticket.save(function (err, savedTicket) {
+                if (err) {
+                    res.send(err);
+                }
+                res.redirect('view?id=' + savedTicket.id);
+            });
         }
     });
 }
