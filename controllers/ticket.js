@@ -41,34 +41,37 @@ exports.create = function(req, res) {
 
 exports.submit = function(req, res) {
     // Check for missing fields
-    console.log(req.body);
-    req.checkBody('hackerName', 'No hacker name provided').notEmpty();
-    req.checkBody('hackerLocation', 'No location provided').notEmpty();
-    req.checkBody('problemTitle', 'No title submitted').notEmpty();
-    req.checkBody('problemDescription', 'No problem description provided').notEmpty();
+    req.checkBody('hackerName', 'No hacker name provided').len(1, 1000);
+    req.checkBody('hackerLocation', 'No location provided').len(1,1000);
+    req.checkBody('problemTitle', 'No title submitted').len(1,1000);
+    req.checkBody('problemDescription', 'No problem description provided').len(1, 10000);
 
     req.getValidationResult().then(function(result) {
         if (!result.isEmpty()) {
-            res.status(400).render('ticket/create', {errors: result.array()});
+            // Render a warning to the user for more data.
+            res.status(400).render('ticket/create', { errors: result.array() });
+            return;
+        } else {
+            // The entry is good, continue with saving the item
+            var ticket = Ticket();
+            ticket.hackerName = req.body.hackerName;
+            ticket.hackerPhoneNumber = req.body.hackerPhoneNumber;
+            ticket.hackerLocation = req.body.hackerLocation;
+            ticket.problemTitle = req.body.problemTitle;
+            ticket.problemDescription = req.body.problemDescription;
+            ticket.status = "Open";
+            ticket.projectName = req.body.projectName;
+            tags = req.body.problemTags;
+
+            ticket.problemTags = tags.split(',');
+
+            ticket.save(function (err) {
+                if (err) {
+                    res.send(err);
+                }
+                //res.redirect('view?id=' + ticket._id);
+                res.sendStatus(201);
+            });
         }
     })
-
-    var ticket = Ticket();
-    ticket.hackerName = req.body.hackerName;
-    ticket.hackerPhoneNumber = req.body.hackerPhoneNumber;
-    ticket.hackerLocation = req.body.hackerLocation;
-    ticket.problemTitle = req.body.problemTitle;
-    ticket.problemDescription = req.body.problemDescription;
-    ticket.status = "Open";
-    ticket.projectName = req.body.projectName;
-    tags = req.body.problemTags;
-
-    ticket.problemTags = tags.split(',');
-
-    ticket.save(function(err) {
-        if (err) {
-            res.send(err);
-        }
-    });
-    res.sendStatus(201);
 }
