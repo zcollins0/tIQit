@@ -41,4 +41,7 @@ block content
 							+statusOption("Open", ticket.status == "Open")
 							+statusOption("Claimed by mentor",ticket.status == "Claimed by mentor")
 							+statusOption("Closed",ticket.status == "Closed")
+				tr(class="ticket-field-view",id="submit")
+					td
 						input(id="submit-change", class="nav-button", type="submit", value="Submit change")
+				
