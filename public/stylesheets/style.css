@@ -75,6 +75,10 @@ a {
   padding-left: 10%;
 }
 
+.container > h1{
+  margin-left:25%;
+}
+
 .ticket-section td{
   padding: 17px;
 }
