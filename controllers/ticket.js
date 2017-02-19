@@ -6,7 +6,11 @@ exports.view_all = function(req, res) {
     var skip = page > 0 ? ((page - 1) * size) : 0;
     Ticket.find(null,null, {
         skip: skip,
-        limit: size
+        limit: size,
+        sort:{
+            status: -1,
+            date_added: -1
+        }
     },
     function(err, tickets) {
        res.render('ticket/view-all', {
