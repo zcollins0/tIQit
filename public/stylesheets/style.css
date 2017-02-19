@@ -3,8 +3,12 @@ html,body {
   font-size: 15pt;
   color: black;
   background-color: #C9EFFC;
-  max-width: 900px;
+  //max-width: 900px;
   margin: auto;
+  background-image: url(/images/tIQit.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .nav-button{
