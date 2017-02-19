@@ -58,10 +58,11 @@ a {
 }
 
 .ticket-section {
-  display: inline-block;
+  display: block;
   padding: 5px;
   padding-bottom: 0px;
-  width: 100%;
+  width: 80%;
+  margin: 0px auto;
 }
 
 .ticket-section > h1 {
@@ -141,10 +142,11 @@ a {
 .ticket-field-view {
   min-width: 900px;
   background-color: white;
-  border-top: 1px solid black;
 }
 
-
+.ticket-field-view td {
+    margin-bottom: 3px;
+}
 
 #status-dropdown{
   margin-left: 50% auto;
@@ -170,7 +172,6 @@ a {
 #details-link:visited rect{
   fill: #67cbec;
 }
-
 
 #nav-bar{
   background-color:#67cbec;
