@@ -20,7 +20,7 @@ exports.view_all = function(req, res) {
 }
 
 exports.view = function(req, res) {
-    Ticket.findOne({"ticketSchema._id": req.params.id}, function(err, ticket) {
+    Ticket.findById(req.query.id, function(err, ticket) {
         if (ticket) {
             res.render('ticket/view', {ticket});
         }
@@ -64,12 +64,11 @@ exports.submit = function(req, res) {
 
             ticket.problemTags = tags.split(',');
 
-            ticket.save(function (err) {
+            ticket.save(function (err, savedTicket) {
                 if (err) {
                     res.send(err);
                 }
-                //res.redirect('view?id=' + ticket._id);
-                res.sendStatus(201);
+                res.redirect('view?id=' + savedTicket.id);
             });
         }
     })
