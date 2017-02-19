@@ -1,6 +1,6 @@
 html,body {
   font-family:"Jockey One","Lato", sans-serif;
-  font-size: 20pt;
+  font-size: 15pt;
   color: black;
   background-color: #C9EFFC;
   max-width: 900px;
@@ -72,6 +72,8 @@ a {
 
 #submit-ticket {
   margin:2% auto;
+  font-family:"Jockey One","Lato", sans-serif;
+  font-size:16pt;
 }
 
 .warning-message {
@@ -101,10 +103,7 @@ a {
 }
 
 #tickets-table td {
-  border-left: 1px solid #67cbec;
-  border-bottom: 1px solid #67cbec;
-  border-top: 1px solid #67cbec;
-  border-right: 1px solid #67cbec;
+  border: 1px solid #67cbec;
   padding-left:18px auto;
   padding-bottom:18px auto;
   margin: 5px;
@@ -170,4 +169,16 @@ a {
 }
 #details-link:visited rect{
   fill: #67cbec;
+}
+
+
+#nav-bar{
+  background-color:#67cbec;
+  margin-bottom:50px;
+  
+}
+
+#nav-bar a{
+  text-align: center;
+  padding: 30px;
 }
