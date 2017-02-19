@@ -195,3 +195,8 @@ a {
   padding: 10px;
 }
 
+.container {
+    background-color: white;
+    height: 100%;
+}
+
