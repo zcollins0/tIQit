@@ -65,10 +65,14 @@ a {
   margin: 0px auto;
 }
 
-.ticket-section > h1 {
+.ticket-section h1 {
   font-size:20pt;
   text-align: left;
   padding-left: 10%;
+}
+
+.ticket-section td{
+  padding: 17px;
 }
 
 #submit-ticket {
@@ -141,11 +145,15 @@ a {
 
 .ticket-field-view {
   min-width: 900px;
+  min-height: 100%;
   background-color: white;
+
 }
 
 .ticket-field-view td {
-    margin-bottom: 3px;
+  margin-bottom: 10px;
+  padding-right: 25px;
+  padding-left: 25px;
 }
 
 #status-dropdown{
@@ -175,11 +183,10 @@ a {
 
 #nav-bar{
   background-color:#67cbec;
-  margin-bottom:50px;
   
 }
 
 #nav-bar a{
   text-align: center;
-  padding: 30px;
+  padding: 10px;
 }

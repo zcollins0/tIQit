@@ -7,7 +7,7 @@ block content
 				p= error.msg
 	form(id="ticket-form", action="submit", method="post")
 		div(class="ticket-section", id="heading") 
-			h1 Title: 
+			h1 Title*: 
 			table
 				tr
 					input(type="text", class="ticket-field", name="problemTitle", placeholder="Problem title")
@@ -20,13 +20,13 @@ block content
 			h1 Details: 
 			table
 				tr
-					input(type="text", class="ticket-field",  name="hackerName", placeholder="Your name")
+					input(type="text", class="ticket-field",  name="hackerName", placeholder="Your name (required)")
 				tr
-					input(type="text", class="ticket-field",  name="projectName", placeholder="Name of your project")
+					input(type="text", class="ticket-field",  name="projectName", placeholder="Name of your project (required)")
 				tr
-					textarea(class="ticket-field", name="problemDescription", placeholder="Description of your problem")
+					textarea(class="ticket-field", name="problemDescription", placeholder="Description of your problem (required)")
 				tr
-					textarea(class="ticket-field", name="hackerLocation", placeholder="Description of your location so a mentor can find you")
+					textarea(class="ticket-field", name="hackerLocation", placeholder="Description of your location so a mentor can find you (required)")
 				tr
 					input(type="number", class="ticket-field", name="hackerPhoneNumber", placeholder="Your phone number in case your mentor can't find you")
 		input(id="submit-ticket", class="nav-button", type="submit", value="Create new ticket!")
