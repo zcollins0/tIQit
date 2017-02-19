@@ -11,7 +11,8 @@ exports.view_all = function(req, res) {
     function(err, tickets) {
        res.render('ticket/view-all', {
             title: "All Tickets",
-            tickets: tickets
+            tickets: tickets,
+            title: "View-all"
         });
         
         
@@ -22,7 +23,7 @@ exports.view_all = function(req, res) {
 exports.view = function(req, res) {
     Ticket.findById(req.query.id, function(err, ticket) {
         if (ticket) {
-            res.render('ticket/view', {ticket});
+            res.render('ticket/view', {ticket, title: ticket.problemTitle});
         }
     });
 }
@@ -35,7 +36,7 @@ exports.view = function(req,res) {
 */
 
 exports.create = function(req, res) {
-    res.render('ticket/create');
+    res.render('ticket/create', {title: "Create new ticket"});
 }
 
 exports.submit = function(req, res) {
@@ -48,7 +49,7 @@ exports.submit = function(req, res) {
     req.getValidationResult().then(function(result) {
         if (!result.isEmpty()) {
             // Render a warning to the user for more data.
-            res.status(400).render('ticket/create', { errors: result.array() });
+            res.status(400).render('ticket/create', { errors: result.array(), title: "You goofed" });
             return;
         } else {
             // The entry is good, continue with saving the item
