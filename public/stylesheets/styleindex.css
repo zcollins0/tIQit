@@ -174,14 +174,6 @@ a {
     padding-bottom: 10%;
 }
 
-#submit-change{
-  padding: 40px;
-  min-width:400px;
-  /*margin-left: 1000px auto;*/
-  font-size: 14pt;
-
-}
-
 #status-field td{
   width:100%;
   text-align: left;
