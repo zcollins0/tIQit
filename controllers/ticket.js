@@ -21,6 +21,8 @@ exports.view_all = function(req, res) {
         }
         if (page > 1) {
             prevPage = page -1;
+        } else {
+            prevPage = 0;
         }
        res.render('ticket/view-all', {
             title: "All Tickets",
