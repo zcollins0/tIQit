@@ -4,14 +4,10 @@ html,body {
   color: black;
   background-color: #C9EFFC;
   margin: auto;
-  /*background-image: url(/images/tIQit.png);
+  background-image: url(/images/tIQit.png);
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;*/
-}
-
-.bkimg {
-
+  background-attachment: fixed;
 }
 
 .nav-button{
