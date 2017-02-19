@@ -84,11 +84,6 @@ a {
   padding: 17px;
 }
 
-#submit-ticket {
-  margin:2% auto;
-  font-family:"Jockey One","Lato", sans-serif;
-  font-size:16pt;
-}
 
 .warning-message {
   font-size:20pt;
@@ -177,9 +172,11 @@ a {
 
 #submit-change{
   padding: 40px;
-  width:300px;
+  width:400px;
   text-align: center;
   margin: 0 auto;
+  font-family:"Jockey One","Lato", sans-serif;
+  font-size:16pt;
 
 }
 
