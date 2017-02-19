@@ -175,7 +175,7 @@ a {
 
 #submit-change{
   padding: 100px auto;
-  min-width:400px;
+  max-width:400px;
   margin-left: 1000px auto;
 
 }
