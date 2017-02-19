@@ -13,10 +13,21 @@ exports.view_all = function(req, res) {
         }
     },
     function(err, tickets) {
+        var nextPage, prevPage;
+        if (tickets < 10) {
+            nextPage=0;
+        } else {
+            nextPage = page +1;
+        }
+        if (page > 1) {
+            prevPage = page -1;
+        }
        res.render('ticket/view-all', {
             title: "All Tickets",
             tickets: tickets,
-            title: "View-all"
+            title: "View-all",
+            nextPage: nextPage,
+            prevPage: prevPage
         });
         
         
