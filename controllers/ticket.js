@@ -11,7 +11,8 @@ exports.view_all = function(req, res) {
     function(err, tickets) {
        res.render('ticket/view-all', {
             title: "All Tickets",
-            tickets: tickets
+            tickets: tickets,
+            pageNum: req.query.page
         });
         
         
