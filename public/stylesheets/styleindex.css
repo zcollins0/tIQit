@@ -175,9 +175,10 @@ a {
 }
 
 #submit-change{
-  padding: 100px auto;
+  padding: 40px;
   min-width:400px;
-  margin-left: 1000px auto;
+  /*margin-left: 1000px auto;*/
+  font-size: 14pt;
 
 }
 

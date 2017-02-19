@@ -10,9 +10,7 @@ html,body {
   background-attachment: fixed;*/
 }
 
-.bkimg {
 
-}
 
 .nav-button{
 	padding:5%;
@@ -178,9 +176,10 @@ a {
 }
 
 #submit-change{
-  padding: 100px auto;
-  min-width:400px;
-  margin-left: 1000px auto;
+  padding: 40px;
+  width:300px;
+  text-align: center;
+  margin: 0 auto;
 
 }
 
