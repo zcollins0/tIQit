@@ -52,7 +52,9 @@ a {
   margin: 0px auto;
   margin-top: 0px;
   padding: 5px;
-  padding-top: 0px;
+  padding-bottom: 7px;
+  margin-bottom: 7px;
+  border: 2px solid black;
 }
 
 .ticket-section {
@@ -128,7 +130,6 @@ a {
 
 #open-view text {
     font-size: 10pt;
-    alignment-baseline: central;
     text-anchor: middle;
     fill: white;
 }
