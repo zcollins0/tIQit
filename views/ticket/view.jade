@@ -8,6 +8,12 @@ mixin tagSection(tagsPresent)
 				tr(class="ticket-field-view" id="problem-tags")
 					td= "Tags: " + ticket.problemTags
 
+mixin statusOption(name,isSelected)
+	if(isSelected)
+		option(value=name, selected)= name
+	else
+		option(value=name)= name
+
 block content
 	form(id="view-ticket", action="update?id=" + ticket.id,method="post")
 		div(class="ticket-section", id="heading") 
@@ -32,7 +38,10 @@ block content
 				tr(class="ticket-field-view", id="status-field")
 					td Status:
 						select(id="status-dropdown", name="status")
-							option(value="Open") Open
-							option(value="Claimed by mentor") Claimed by mentor
-							option(value="Closed") Closed
+							+statusOption("Open", ticket.status == "Open")
+							+statusOption("Claimed by mentor",ticket.status == "Claimed by mentor")
+							+statusOption("Closed",ticket.status == "Closed")
+				tr(class="ticket-field-view",id="submit")
+					td
 						input(id="submit-change", class="nav-button", type="submit", value="Submit change")
+				

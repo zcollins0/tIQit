@@ -5,7 +5,7 @@ var controller = require('../controllers/ticket');
 
 /* GET users listing. */
 router.get('/', function(req, res) {
-    res.redirect('ticket/create')
+    res.redirect('/ticket/view-all')
 });
 router.get('/create', controller.create);
 router.get('/view', controller.view);
